@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PrimeVista Trading — Premium Jewelry Supplier</title>
+<meta name="description" content="Shenzhen-based premium jewelry supplier. Stainless steel chains, flat-back earrings, custom OEM for worldwide brands.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>✦</text></svg>">
+<style>
+  :root {
+    --bg: #fff;
+    --text: #1d1d1f;
+    --text2: #6e6e73;
+    --text3: #aeaeb2;
+    --accent: #c8a45c;
+    --accent2: #b8943c;
+    --border: #e5e5e7;
+    --card: #fbfbfd;
+    --dark: #1d1d1f;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Nav */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,.82);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .inner {
+    max-width: 1024px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 1.5rem; height: 48px;
+  }
+  nav .logo { font-size: 1.2rem; font-weight: 600; color: var(--dark); text-decoration: none; letter-spacing: -.02em; }
+  nav .links { display: flex; gap: 2rem; list-style: none; }
+  nav .links a { color: var(--text2); text-decoration: none; font-size: .82rem; font-weight: 450; transition: color .2s; letter-spacing: -.01em; }
+  nav .links a:hover { color: var(--dark); }
+
+  /* Sections */
+  section { padding: 120px 1.5rem 80px; }
+  section.alt { background: var(--card); }
+
+  /* Hero */
+  #home { text-align: center; padding-top: 160px; padding-bottom: 100px; }
+  #home h1 { font-size: 3.5rem; font-weight: 600; letter-spacing: -.03em; line-height: 1.1; margin-bottom: 1rem; color: var(--dark); }
+  #home .sub { font-size: 1.3rem; font-weight: 400; color: var(--text2); max-width: 520px; margin: 0 auto 2.5rem; letter-spacing: -.01em; }
+  #home .ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: .75rem 1.8rem; border-radius: 980px;
+    font-size: .88rem; font-weight: 500; text-decoration: none; letter-spacing: -.01em;
+    transition: all .25s;
+  }
+  .btn-fill { background: var(--dark); color: #fff; }
+  .btn-fill:hover { background: #333; transform: scale(1.02); }
+  .btn-outline { border: 1.5px solid var(--border); color: var(--dark); }
+  .btn-outline:hover { border-color: var(--dark); }
+  .btn-accent { background: var(--accent); color: #fff; }
+  .btn-accent:hover { background: var(--accent2); transform: scale(1.02); }
+
+  /* Section titles */
+  .sec-label { text-align: center; font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; color: var(--accent); margin-bottom: .5rem; }
+  .sec-title { text-align: center; font-size: 2.5rem; font-weight: 600; letter-spacing: -.03em; margin-bottom: 1rem; color: var(--dark); }
+  .sec-desc { text-align: center; font-size: 1.05rem; color: var(--text2); max-width: 500px; margin: 0 auto 3rem; }
+
+  /* Why cards */
+  .why-grid {
+    max-width: 960px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem;
+  }
+  .why-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+    padding: 2rem 1.5rem; text-align: center; transition: transform .3s, box-shadow .3s;
+  }
+  .why-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,.04); }
+  .why-card .icon { font-size: 2rem; margin-bottom: .8rem; }
+  .why-card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: .4rem; letter-spacing: -.01em; }
+  .why-card p { font-size: .88rem; color: var(--text2); line-height: 1.5; }
+
+  /* Product grid */
+  .prod-grid {
+    max-width: 1024px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;
+  }
+  .prod-card {
+    background: var(--bg); border-radius: 20px; overflow: hidden;
+    border: 1px solid var(--border); transition: transform .3s, box-shadow .3s;
+  }
+  .prod-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,.06); }
+  .prod-card img { width: 100%; height: 240px; object-fit: cover; display: block; }
+  .prod-card .body { padding: 1.5rem; }
+  .prod-card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: .4rem; letter-spacing: -.01em; }
+  .prod-card .desc { font-size: .88rem; color: var(--text2); margin-bottom: .8rem; line-height: 1.5; }
+  .tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+  .tag { font-size: .68rem; padding: .25rem .7rem; background: #f5f5f7; color: var(--text2); border-radius: 980px; font-weight: 500; }
+
+  /* About */
+  #about .about-inner { max-width: 700px; margin: 0 auto; }
+  #about h2 { font-size: 2rem; font-weight: 600; margin: 2.5rem 0 .8rem; letter-spacing: -.02em; color: var(--dark); }
+  #about p { font-size: 1rem; color: var(--text2); margin-bottom: 1rem; line-height: 1.7; }
+  #about .highlight { color: var(--accent2); font-weight: 500; }
+
+  /* Contact */
+  .contact-grid {
+    max-width: 600px; margin: 0 auto;
+    display: grid; gap: 1.25rem;
+  }
+  .contact-row {
+    background: var(--bg); border: 1px solid var(--border); border-radius: 16px;
+    padding: 1.25rem 1.5rem; display: flex; align-items: center; gap: 1rem;
+    transition: transform .2s;
+  }
+  .contact-row:hover { transform: translateY(-1px); }
+  .contact-row .icon { font-size: 1.4rem; width: 36px; text-align: center; flex-shrink: 0; }
+  .contact-row .label { font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--text3); margin-bottom: .15rem; }
+  .contact-row .value { font-size: .95rem; color: var(--dark); font-weight: 450; }
+  .contact-row a { color: var(--accent2); text-decoration: none; }
+  .contact-row a:hover { text-decoration: underline; }
+
+  /* CTA banner */
+  .cta-banner {
+    text-align: center; background: var(--card); border: 1px solid var(--border);
+    border-radius: 20px; padding: 2.5rem 2rem; max-width: 500px; margin: 0 auto;
+  }
+  .cta-banner h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: .4rem; }
+  .cta-banner p { color: var(--text2); font-size: .9rem; margin-bottom: 1.5rem; }
+
+  /* Footer */
+  footer {
+    background: var(--card); border-top: 1px solid var(--border);
+    text-align: center; padding: 1.5rem; font-size: .8rem; color: var(--text3);
+  }
+
+  /* WhatsApp */
+  .wa-float {
+    position: fixed; bottom: 28px; right: 28px; z-index: 200;
+    width: 52px; height: 52px; border-radius: 50%;
+    background: #25D366; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,.3);
+    transition: transform .3s, box-shadow .3s; text-decoration: none;
+  }
+  .wa-float:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(37,211,102,.4); }
+  .wa-float svg { width: 26px; height: 26px; }
+
+  /* Catalog page */
+  .catalog-section { max-width: 800px; margin: 0 auto; }
+  .catalog-item {
+    display: flex; gap: 1.5rem; padding: 1.5rem; border: 1px solid var(--border);
+    border-radius: 16px; margin-bottom: 1rem; align-items: center;
+  }
+  .catalog-item img { width: 120px; height: 90px; object-fit: cover; border-radius: 10px; }
+  .catalog-item h3 { font-size: 1rem; font-weight: 600; margin-bottom: .3rem; }
+  .catalog-item p { font-size: .85rem; color: var(--text2); }
+
+  @media (max-width: 640px) {
+    #home h1 { font-size: 2.4rem; }
+    .sec-title { font-size: 1.8rem; }
+    nav .links { gap: 1.2rem; }
+    nav .links a { font-size: .76rem; }
+    section { padding: 100px 1rem 60px; }
+    #home { padding-top: 140px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <div class="inner">
+    <a href="/" class="logo">PrimeVista</a>
+    <ul class="links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="/catalog">Catalog</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Home / Hero -->
+<section id="home">
+  <h1>Premium Jewelry.<br>Global Vision.</h1>
+  <p class="sub">Shenzhen-based supplier of stainless steel chains, flat-back earrings, and custom OEM for brands worldwide.</p>
+  <div class="ctas">
+    <a href="#products" class="btn btn-fill">View Products</a>
+    <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    <a href="/catalog" class="btn btn-outline">Download Catalog</a>
+  </div>
+</section>
+
+<!-- Why -->
+<section class="alt" id="why">
+  <div class="sec-label">Why PrimeVista</div>
+  <div class="sec-title">Built for global brands.</div>
+  <div class="sec-desc">Direct factory access, premium materials, and flexible service — from samples to bulk.</div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="icon">🏭</div>
+      <h3>Direct from Shenzhen</h3>
+      <p>Located in China's jewelry capital for the best prices and fastest turnaround.</p>
+    </div>
+    <div class="why-card">
+      <div class="icon">✨</div>
+      <h3>Premium Materials</h3>
+      <p>316L steel, genuine CZ stones, PVD vacuum plating — quality you can trust.</p>
+    </div>
+    <div class="why-card">
+      <div class="icon">📦</div>
+      <h3>Low MOQ</h3>
+      <p>Sample orders welcome. Scale at your own pace with flexible minimums.</p>
+    </div>
+    <div class="why-card">
+      <div class="icon">🌏</div>
+      <h3>Global Shipping</h3>
+      <p>USA, Europe, Middle East, SE Asia. DDP and reliable logistics available.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section id="products">
+  <div class="sec-label">Our Collection</div>
+  <div class="sec-title">Products that sell.</div>
+  <div class="sec-desc">Proven best-sellers on Amazon, Etsy, and Shopify stores worldwide.</div>
+  <div class="prod-grid">
+    <div class="prod-card">
+      <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80" alt="Cuban Chain" loading="lazy">
+      <div class="body">
+        <h3>Men's Cuban Chain</h3>
+        <p class="desc">Classic Cuban link. 316L steel with PVD gold plating. 3–8mm widths, 18–26 inches.</p>
+        <div class="tags"><span class="tag">3-8mm</span><span class="tag">316L Steel</span><span class="tag">PVD Gold</span></div>
+      </div>
+    </div>
+    <div class="prod-card">
+      <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=600&q=80" alt="Figaro Chain" loading="lazy">
+      <div class="body">
+        <h3>Figaro Chain Necklace</h3>
+        <p class="desc">Italian Figaro pattern. Tarnish-resistant. 4–7mm, 20–28 inches. Silver and gold finishes.</p>
+        <div class="tags"><span class="tag">4-7mm</span><span class="tag">316L Steel</span><span class="tag">Silver/Gold</span></div>
+      </div>
+    </div>
+    <div class="prod-card">
+      <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80" alt="Rope Chain" loading="lazy">
+      <div class="body">
+        <h3>Rope Chain</h3>
+        <p class="desc">Twisted rope design with brilliant shine. 2–6mm, 16–30 inches. Multiple finishes.</p>
+        <div class="tags"><span class="tag">2-6mm</span><span class="tag">316L Steel</span><span class="tag">PVD Coated</span></div>
+      </div>
+    </div>
+    <div class="prod-card">
+      <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80" alt="Flat Back Earrings" loading="lazy">
+      <div class="body">
+        <h3>Flat Back Earring Set</h3>
+        <p class="desc">5-pair set. CZ stones, gold vermeil. Sleep-safe, hypoallergenic. #1 trending.</p>
+        <div class="tags"><span class="tag">5 Pairs</span><span class="tag">CZ Stones</span><span class="tag">Gold Vermeil</span></div>
+      </div>
+    </div>
+    <div class="prod-card">
+      <img src="https://images.unsplash.com/photo-1633810542706-94e5ef629bc8?w=600&q=80" alt="Huggie Earrings" loading="lazy">
+      <div class="body">
+        <h3>Mini Huggie Earrings</h3>
+        <p class="desc">CZ-accented small hoops. 8–12mm. Polished steel with 18K gold plating.</p>
+        <div class="tags"><span class="tag">8-12mm</span><span class="tag">CZ Inlay</span><span class="tag">18K Gold</span></div>
+      </div>
+    </div>
+    <div class="prod-card">
+      <img src="https://images.unsplash.com/photo-1515562141568-55d0cf111e7a?w=600&q=80" alt="Custom OEM" loading="lazy">
+      <div class="body">
+        <h3>Custom OEM</h3>
+        <p class="desc">Your design, our craft. Custom logos, packaging, plating. Full white-label solutions.</p>
+        <div class="tags"><span class="tag">Custom Design</span><span class="tag">White Label</span><span class="tag">Bulk</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Download CTA -->
+<section class="alt">
+  <div class="cta-banner">
+    <h3>Product Catalog</h3>
+    <p>Complete specs, materials, sizing, and wholesale pricing for our entire collection.</p>
+    <a href="/catalog" class="btn btn-accent">Download Catalog →</a>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="sec-label">About Us</div>
+  <div class="sec-title">PrimeVista Trading</div>
+  <div class="about-inner">
+    <p><span class="highlight">PrimeVista Trading Co., Ltd.</span> (卓景国际贸易有限责任公司) is a Shenzhen-based jewelry supplier specializing in premium stainless steel accessories for global brands and retailers.</p>
+    <p>Located in China's largest jewelry manufacturing hub, we offer <span class="highlight">direct factory pricing</span> with flexible MOQs, sample orders, and complete white-label solutions for clients in the US, Europe, and Middle East markets.</p>
+    <h2>Our Promise</h2>
+    <p>Every piece is quality-checked before shipping. We use <span class="highlight">316L stainless steel</span>, genuine <span class="highlight">cubic zirconia</span>, and <span class="highlight">PVD vacuum plating</span> — no cheap spray coatings that wear off in weeks.</p>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="alt" id="contact">
+  <div class="sec-label">Get in Touch</div>
+  <div class="sec-title">Let's talk.</div>
+  <div class="sec-desc">We reply within 24 hours — Monday to Saturday.</div>
+  <div class="contact-grid">
+    <div class="contact-row">
+      <div class="icon">📧</div>
+      <div>
+        <div class="label">Email</div>
+        <div class="value"><a href="mailto:maxkou@primevistatrade.com">maxkou@primevistatrade.com</a></div>
+      </div>
+    </div>
+    <div class="contact-row">
+      <div class="icon">💬</div>
+      <div>
+        <div class="label">WhatsApp</div>
+        <div class="value"><a href="https://wa.me/8613800000000" target="_blank">+86 138 0000 0000</a></div>
+      </div>
+    </div>
+    <div class="contact-row">
+      <div class="icon">📍</div>
+      <div>
+        <div class="label">Location</div>
+        <div class="value">Shenzhen, Guangdong, China</div>
+      </div>
+    </div>
+    <div class="contact-row">
+      <div class="icon">🕐</div>
+      <div>
+        <div class="label">Hours</div>
+        <div class="value">Mon–Sat, 9:00 AM – 6:00 PM (CST)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 PrimeVista Trading Co., Ltd. — 卓景国际贸易有限责任公司
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/8613800000000" class="wa-float" target="_blank" rel="noopener" title="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Catalog — PrimeVista Trading</title>
+<meta name="description" content="Complete product catalog with specifications, materials, sizing, and wholesale pricing.">
+<style>
+  :root {
+    --bg: #fff; --text: #1d1d1f; --text2: #6e6e73; --text3: #aeaeb2;
+    --accent: #c8a45c; --accent2: #b8943c; --border: #e5e5e7; --card: #fbfbfd; --dark: #1d1d1f;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+    color: var(--text); background: var(--bg); line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,.82);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .inner {
+    max-width: 1024px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 1.5rem; height: 48px;
+  }
+  nav .logo { font-size: 1.2rem; font-weight: 600; color: var(--dark); text-decoration: none; letter-spacing: -.02em; }
+  nav .links { display: flex; gap: 2rem; list-style: none; }
+  nav .links a { color: var(--text2); text-decoration: none; font-size: .82rem; font-weight: 450; }
+  nav .links a:hover { color: var(--dark); }
+
+  section { padding: 100px 1.5rem 60px; max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2.8rem; font-weight: 600; letter-spacing: -.03em; text-align: center; margin-bottom: .5rem; }
+  .sub { text-align: center; color: var(--text2); font-size: 1.05rem; margin-bottom: 1.5rem; }
+  .print-hint {
+    text-align: center; background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 1rem; margin-bottom: 2rem; font-size: .85rem; color: var(--text2);
+  }
+  h2 { font-size: 1.6rem; font-weight: 600; margin: 2rem 0 1rem; letter-spacing: -.02em; }
+
+  .catalog-item {
+    display: flex; gap: 1.25rem; padding: 1.25rem; border: 1px solid var(--border);
+    border-radius: 14px; margin-bottom: .75rem; align-items: center;
+    page-break-inside: avoid;
+  }
+  .catalog-item img { width: 100px; height: 75px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
+  .catalog-item h3 { font-size: .95rem; font-weight: 600; margin-bottom: .2rem; }
+  .catalog-item p { font-size: .82rem; color: var(--text2); }
+  .ctags { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .4rem; }
+  .ctag { font-size: .65rem; padding: .2rem .55rem; background: #f5f5f7; border-radius: 980px; color: var(--text2); }
+
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: .85rem; }
+  th { background: #f5f5f7; padding: .6rem .8rem; text-align: left; font-weight: 600; font-size: .78rem; color: var(--text2); }
+  td { padding: .6rem .8rem; border-bottom: 1px solid var(--border); }
+
+  .btn {
+    display: inline-block; padding: .7rem 1.6rem; border-radius: 980px;
+    font-size: .85rem; font-weight: 500; text-decoration: none;
+  }
+  .btn-back { border: 1.5px solid var(--border); color: var(--dark); margin-bottom: 1.5rem; }
+  .btn-back:hover { border-color: var(--dark); }
+
+  footer { background: var(--card); border-top: 1px solid var(--border); text-align: center; padding: 1.5rem; font-size: .8rem; color: var(--text3); margin-top: 3rem; }
+
+  @media print {
+    nav, .print-hint, .btn-back, footer { display: none; }
+    section { padding: 1rem 0; }
+    body { font-size: 11px; }
+  }
+  @media (max-width: 640px) {
+    h1 { font-size: 2rem; }
+    .catalog-item { flex-direction: column; }
+    .catalog-item img { width: 100%; height: 160px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a href="/" class="logo">PrimeVista</a>
+    <ul class="links">
+      <li><a href="/#home">Home</a></li>
+      <li><a href="/#products">Products</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#contact">Contact</a></li>
+      <li><a href="/catalog">Catalog</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section>
+  <a href="/" class="btn btn-back">← Back</a>
+  <h1>Product Catalog</h1>
+  <p class="sub">Complete specifications, materials, sizing options, and wholesale pricing</p>
+  
+  <div class="print-hint">
+    📥 Press <strong>⌘+P</strong> (or Ctrl+P) → <strong>Save as PDF</strong> to download this catalog
+  </div>
+
+  <h2>Men's Chain Necklaces</h2>
+
+  <div class="catalog-item">
+    <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=300&q=80" alt="Cuban Chain">
+    <div>
+      <h3>Men's Cuban Chain</h3>
+      <p>Classic Cuban link design. Polished 316L stainless steel with PVD gold plating. Best-selling men's chain.</p>
+      <div class="ctags"><span class="ctag">3-8mm</span><span class="ctag">18-26"</span><span class="ctag">316L Steel</span><span class="ctag">PVD Gold</span></div>
+    </div>
+  </div>
+
+  <div class="catalog-item">
+    <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=300&q=80" alt="Figaro Chain">
+    <div>
+      <h3>Figaro Chain Necklace</h3>
+      <p>Timeless Italian Figaro pattern. Tarnish-resistant stainless steel. Popular on Amazon and Etsy.</p>
+      <div class="ctags"><span class="ctag">4-7mm</span><span class="ctag">20-28"</span><span class="ctag">316L Steel</span><span class="ctag">Silver/Gold</span></div>
+    </div>
+  </div>
+
+  <div class="catalog-item">
+    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=300&q=80" alt="Rope Chain">
+    <div>
+      <h3>Rope Chain</h3>
+      <p>Twisted rope design with brilliant shine. Perfect for pendants and solo wear. Multiple finishes.</p>
+      <div class="ctags"><span class="ctag">2-6mm</span><span class="ctag">16-30"</span><span class="ctag">316L Steel</span><span class="ctag">PVD Coated</span></div>
+    </div>
+  </div>
+
+  <h2>Earrings</h2>
+
+  <div class="catalog-item">
+    <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=300&q=80" alt="Flat Back Earrings">
+    <div>
+      <h3>Flat Back Earring Set (5 Pairs)</h3>
+      <p>5-pair set. CZ stones, gold vermeil finish. Sleep-safe, hypoallergenic. #1 trending on Amazon US.</p>
+      <div class="ctags"><span class="ctag">5 Pairs</span><span class="ctag">CZ Stones</span><span class="ctag">Gold Vermeil</span><span class="ctag">Hypoallergenic</span></div>
+    </div>
+  </div>
+
+  <div class="catalog-item">
+    <img src="https://images.unsplash.com/photo-1633810542706-94e5ef629bc8?w=300&q=80" alt="Huggie Earrings">
+    <div>
+      <h3>Mini Huggie Earrings</h3>
+      <p>CZ-accented small hoop earrings. Polished stainless steel. Everyday essential.</p>
+      <div class="ctags"><span class="ctag">8-12mm</span><span class="ctag">CZ Inlay</span><span class="ctag">Steel</span><span class="ctag">18K Gold</span></div>
+    </div>
+  </div>
+
+  <h2>Custom</h2>
+
+  <div class="catalog-item">
+    <img src="https://images.unsplash.com/photo-1515562141568-55d0cf111e7a?w=300&q=80" alt="Custom OEM">
+    <div>
+      <h3>Custom OEM Production</h3>
+      <p>Your design, our manufacturing. Custom logos, packaging, and plating. Full white-label solutions.</p>
+      <div class="ctags"><span class="ctag">Custom Design</span><span class="ctag">Bulk Orders</span><span class="ctag">White Label</span><span class="ctag">Custom Packaging</span></div>
+    </div>
+  </div>
+
+  <h2>Materials</h2>
+  <table>
+    <tr><th>Material</th><th>Grade</th><th>Features</th></tr>
+    <tr><td>Stainless Steel</td><td>316L</td><td>Hypoallergenic, tarnish-resistant, waterproof</td></tr>
+    <tr><td>Gold Plating</td><td>PVD Vacuum</td><td>Long-lasting, 18K/24K color, wear-resistant</td></tr>
+    <tr><td>Stones</td><td>Cubic Zirconia</td><td>Brilliant cut, diamond-like sparkle</td></tr>
+    <tr><td>Vermeil</td><td>Gold on Silver</td><td>Premium finish, 925 silver base</td></tr>
+  </table>
+
+  <h2>Order Info</h2>
+  <table>
+    <tr><th>Type</th><th>MOQ</th><th>Lead Time</th></tr>
+    <tr><td>Sample</td><td>1-5 pcs</td><td>3-5 days</td></tr>
+    <tr><td>Small Batch</td><td>50-100 pcs</td><td>7-10 days</td></tr>
+    <tr><td>Bulk</td><td>500+ pcs</td><td>15-25 days</td></tr>
+    <tr><td>OEM</td><td>Varies</td><td>20-35 days</td></tr>
+  </table>
+</section>
+
+<footer>
+  &copy; 2025 PrimeVista Trading Co., Ltd. — 卓景国际贸易有限责任公司
+</footer>
+
+</body>
+</html>
